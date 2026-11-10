@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://b1vfy53fuyo2l"]
+
+[ext_resource type="Script" uid="uid://bmbsebnuxnqle" path="res://scripts/zombie.gd" id="1_h15oy"]
+[ext_resource type="Texture2D" uid="uid://cc4o8lq0xv8x5" path="res://assets/placeholder/Small-8-Direction-Characters_by_AxulArt.png" id="2_mntmy"]
+[ext_resource type="Script" uid="uid://dpfdvgmt0w3ir" path="res://scripts/health_component.gd" id="2_yf4vm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g7b7a"]
+radius = 14.0
+height = 44.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gyc6d"]
+radius = 24.0
+height = 92.0
+
+[node name="Zombie" type="CharacterBody2D" unique_id=1168501714]
+collision_layer = 2
+collision_mask = 10
+script = ExtResource("1_h15oy")
+sheet = ExtResource("2_mntmy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2141178237]
+texture_filter = 1
+scale = Vector2(4, 4)
+offset = Vector2(0, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=107005011]
+position = Vector2(0, -6)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_g7b7a")
+
+[node name="Health" type="Node" parent="." unique_id=1733040613]
+script = ExtResource("2_yf4vm")
+max_health = 30
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=738656928]
+collision_layer = 32
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1037333785]
+position = Vector2(0, -46)
+shape = SubResource("CapsuleShape2D_gyc6d")

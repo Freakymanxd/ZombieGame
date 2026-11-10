@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://155xx7s6y6ta"]
+
+[ext_resource type="Script" uid="uid://blyusjbdydqg5" path="res://scripts/main.gd" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://dpbxnopdnllji" path="res://Scenes/HUd.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://c3vvaatya3qu4" path="res://Scenes/level_01.tscn" id="3_jjvhh"]
+[ext_resource type="Script" uid="uid://b4mh2vbevysqn" path="res://scripts/zombie_spawner.gd" id="4_kry3j"]
+
+[node name="Main" type="Node2D" unique_id=1301647385]
+script = ExtResource("1_jjgbg")
+
+[node name="HUD" parent="." unique_id=1463307028 instance=ExtResource("2_bo1nx")]
+
+[node name="Level" parent="." unique_id=649714741 instance=ExtResource("3_jjvhh")]
+
+[node name="ZombieSpawner" type="Node" parent="." unique_id=1004381586]
+script = ExtResource("4_kry3j")
+max_alive = 120
+initial_count = 45
+rest_time_min = 15.0
+rest_time_max = 25.0

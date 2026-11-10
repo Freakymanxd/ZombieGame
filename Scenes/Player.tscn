@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://be8qbmt0fe144"]
+
+[ext_resource type="Script" uid="uid://wddgu6jaiy0m" path="res://scripts/player.gd" id="1_rpqav"]
+[ext_resource type="Script" uid="uid://bl5i87hvt5gm8" path="res://scripts/weapon_holder.gd" id="3_5ixxa"]
+[ext_resource type="Resource" uid="uid://52mqghlshems" path="res://data/pistol.tres" id="4_nn08x"]
+[ext_resource type="Script" uid="uid://dpfdvgmt0w3ir" path="res://scripts/health_component.gd" id="5_52ee3"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dewec"]
+load_path = "res://.godot/imported/Small-8-Direction-Characters_by_AxulArt.png-1c4fb3d450ee4fb17c23eb206cede584.ctex"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g7b7a"]
+radius = 14.0
+height = 44.0
+
+[node name="Player" type="CharacterBody2D" unique_id=279778169]
+collision_mask = 8
+script = ExtResource("1_rpqav")
+center_offset = Vector2(0, -48)
+sheet = SubResource("CompressedTexture2D_dewec")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1384343252]
+texture_filter = 1
+scale = Vector2(4, 4)
+offset = Vector2(0, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1693925144]
+position = Vector2(0, -6)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_g7b7a")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1754860304]
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
+
+[node name="WeaponHolder" type="Node" parent="." unique_id=1384794293]
+script = ExtResource("3_5ixxa")
+weapon = ExtResource("4_nn08x")
+
+[node name="Health" type="Node" parent="." unique_id=271324531]
+script = ExtResource("5_52ee3")

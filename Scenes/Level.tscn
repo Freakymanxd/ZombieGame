@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dcp6yboudaiqm"]
+
+[node name="Level" type="Node2D" unique_id=649714741]
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=1930040414]
+
+[node name="Road" type="TileMapLayer" parent="." unique_id=880300869]
+
+[node name="Deatils" type="TileMapLayer" parent="." unique_id=803810903]
+
+[node name="Objects" type="Node2D" parent="." unique_id=1656748523]
+y_sort_enabled = true
