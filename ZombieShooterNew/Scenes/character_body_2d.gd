@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 ## Normal running speed
-const SPEED := 500.0
+const SPEED := 400.0
 
 ## Speed while walking backwards
-const BACK_SPEED := 400.0
+const BACK_SPEED := 300.0
 
 ## 1.0 = same speed in all directions, 0.5 = 2:1 isometric vertical squash.
 @export var iso_y_scale: float = 1.0
